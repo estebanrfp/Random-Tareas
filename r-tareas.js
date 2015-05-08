@@ -7,16 +7,12 @@
 function agregarTarea(){
 
 	var tarea = $('#tarea').val(),
-		$clone = $('.ulu').first().clone();
-
-
-		$clone.find('.item')
-		.text(tarea);
+		$clone = $('.item').first().clone().text(tarea);
 
 		$clone.hide();
-		$('.pepe').append($clone);
+		$('.ulu').append($clone);
 		$clone.fadeIn();
-	return false;
+	
 }
 
 
