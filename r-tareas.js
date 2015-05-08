@@ -1,4 +1,6 @@
+	
 
+  $( ".item" ).css( "display", "none" );
 
 // var tareasUsuario;
 
@@ -11,9 +13,12 @@ function agregarTarea(){
 
 		$clone.hide();
 		$('.ulu').append($clone);
-		$clone.fadeIn();
-	
+		$clone.fadeIn();		
+
+	return false;
 }
+
+
 
 
 $('#formulario').on('submit', agregarTarea);
@@ -36,7 +41,9 @@ function randoma()
 	  // var numero = Math.floor( Math.random() * (maximo - minimo 
    //  + 1) + minimo );
    //  return numero;
- 	var random = Math.floor(Math.random() * $('.item').length); $('.item').hide().eq(random).show();   
+ 	var random = Math.floor(Math.random() * $('.item:nth-child(n+2)').length); $('.item:nth-child(n+2)').hide().eq(random).show();  
+ 	// $( "ulu.item:nth-child(1)" ).css( "display", "none" );
+ 	 
 
 }
 
