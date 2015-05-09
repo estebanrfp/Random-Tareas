@@ -1,6 +1,6 @@
 	
 
-  $( ".item" ).css( "display", "none" );
+ $( ".item" ).css( "display", "none" );
 
 // var tareasUsuario;
 
@@ -92,5 +92,4 @@ function jota() {
      // $(".randoma").click(jota);
 
  
-// $(".randoma").click( randoma );
 
