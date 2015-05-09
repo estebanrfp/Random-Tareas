@@ -11,12 +11,19 @@ function agregarTarea(){
 	var tarea = $('#tarea').val(),
 		$clone = $('.item').first().clone().text(tarea);
 
-		$clone.hide();
-		$('.ulu').append($clone);
-		$clone.fadeIn();		
+		// $clone.hide();
+		$('.ulu').append($clone);		
+		$clone.fadeIn();	
+
+		// pirata.textcontent = $('.item:nth-child(n+2)').show()	
+
+
 
 	return false;
 }
+// function showList() {
+// 	$('.item:nth-child(n+2)').show()	
+// }
 
 
 
@@ -43,19 +50,46 @@ function randoma()
    //  return numero;
  	var random = Math.floor(Math.random() * $('.item:nth-child(n+2)').length); $('.item:nth-child(n+2)').hide().eq(random).show();  
  	// $( "ulu.item:nth-child(1)" ).css( "display", "none" );
- 	 
+ 	 // pepe.textcontent = $( ".item" ).css( "display", "block" ).show();
+
+
 
 }
 
 
-	
+
+	var seconds = 1500;
+	function secondPassed() {
+    var minutes = Math.round((seconds - 30)/60);
+    var remainingSeconds = seconds % 60;
+    if (remainingSeconds < 10) {
+        remainingSeconds = "0" + remainingSeconds;  
+    }
+    document.getElementById('countdown').innerHTML = minutes + ":" + remainingSeconds;
+    if (seconds == 0) {
+        clearInterval(countdownTimer);
+        document.getElementById('countdown').innerHTML = "Buzz Buzz";
+    } else {
+        seconds--;
+    }
+}
+ 
+function jota() {
+	var countdownTimer = setInterval('secondPassed()', 1000);
+	return false ;
+}
 
 // var opciones = [$tarea1, $tarea2, $tarea3];
 // 	var sale = randoma(0,2);
 
      
+    $('.randoma').click(function() {
+        randoma();
+        jota();
+    
+});
 
-     $(".randoma").click (randoma);
+     // $(".randoma").click(jota);
 
  
 // $(".randoma").click( randoma );
