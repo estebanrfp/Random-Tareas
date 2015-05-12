@@ -8,16 +8,27 @@
 
 function agregarTarea(){
 
-	var tarea = $('#tarea').val(),
-		$clone = $('.item').first().clone().text(tarea);
+
+
 
 		// $clone.hide();
-		$('.ulu').append($clone);		
-		$clone.fadeIn();	
+		// $('.ulu').append($clone);		
+		// $clone.fadeIn();	
 
 		// pirata.textcontent = $('.item:nth-child(n+2)').show()	
+        var tiempos = $( "#times option:selected" ).text(),
+        $clone = $('.item').first().clone().text(tiempos);
+
+          $('.ulu').append($clone);       
+        $clone.fadeIn();
+
+            var tarea = $('#tarea').val(),       
+        $clonee = $('.times-print').first().clone().text(tarea);
 
 
+        // $clone.hide();
+        $('.ulus').append($clonee);       
+        $clonee.fadeIn();    
 
 	return false;
 }
