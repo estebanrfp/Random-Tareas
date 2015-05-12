@@ -1,37 +1,61 @@
-	
+ $( ".pepe" ).css( "display", "none" );
 
- $( ".item" ).css( "display", "none" );
+
+
+var $fila = $('.pepe').first(),
+    $tareas = $('#tarea');
+    
+
 
 // var tareasUsuario;
 
 // tareasUsuario = $('#tarea').val();
 
 function agregarTarea(){
+    $tiempos = $( "#times option:selected" ).text();
 
+         var tareas  = $tareas.val(), 
+             tiempos = $tiempos,
+             $clone  = $fila.clone();
 
+             $clone.find('.ulu .item')
+            .text(tareas);
 
+              $clone.find('.ulus .times-print')
+            .text(tiempos);
+        
+
+    $clone.hide();
+
+    $(".section").prepend($clone);
+
+    $clone.fadeIn();
+
+    return false;
+}
 
 		// $clone.hide();
 		// $('.ulu').append($clone);		
 		// $clone.fadeIn();	
 
 		// pirata.textcontent = $('.item:nth-child(n+2)').show()	
-        var tiempos = $( "#times option:selected" ).text(),
-        $clone = $('.item').first().clone().text(tiempos);
-
-          $('.ulu').append($clone);       
-        $clone.fadeIn();
-
-            var tarea = $('#tarea').val(),       
-        $clonee = $('.times-print').first().clone().text(tarea);
 
 
-        // $clone.hide();
-        $('.ulus').append($clonee);       
-        $clonee.fadeIn();    
 
-	return false;
-}
+ //        $clone = $('.item').first().clone().text(tarea);
+
+ //          $('.ulu').append($clone);       
+ //        $clone.fadeIn();
+
+ //        $clonee = $('.times-print').first().clone().text(tiempos);
+
+
+ //        // $clone.hide();
+ //        $('.ulus').append($clonee);       
+ //        $clonee.fadeIn();    
+
+	// return false;
+
 // function showList() {
 // 	$('.item:nth-child(n+2)').show()	
 // }
@@ -59,7 +83,7 @@ function randoma()
 	  // var numero = Math.floor( Math.random() * (maximo - minimo 
    //  + 1) + minimo );
    //  return numero;
- 	var random = Math.floor(Math.random() * $('.item:nth-child(n+2)').length); $('.item:nth-child(n+2)').hide().eq(random).show();  
+ 	var random = Math.floor(Math.random() * $('.pepe:nth-child(n+2)').length); $('.pepe').hide().eq(random).show();  
  	// $( "ulu.item:nth-child(1)" ).css( "display", "none" );
  	 // pepe.textcontent = $( ".item" ).css( "display", "block" ).show();
 
