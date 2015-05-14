@@ -8,20 +8,22 @@ var $fila = $('.list').first(),
 function agregarTarea(){
     $tiempos = $( "#times option:selected" ).text();
 
-     var tareas  = $tareas.val(), 
-         tiempos = $tiempos,
-         $clone  = $fila.clone();
+     var tareas  = $tareas.val();
+         seconds = parseInt($tiempos) * 60;
+      var $clone  = $fila.clone();
 
          $clone.find('.ulu .item')
           .text(tareas);
 
           $clone.find('.ulus .times-print')
-          .text(tiempos);
+          .text(seconds/60);
         
 
           $clone.hide();
           $(".section").prepend($clone);
           $clone.fadeIn();
+
+
 
     return false;
 }
@@ -35,9 +37,10 @@ function randomScript() {
 }
 
 
-
-	var seconds = 1500;
+// pesoEnMarte = (peso / 9.81) * 3.711;
+	
 	function secondPassed() {
+    // var second = (seconds * 60);
     var minutes = Math.round((seconds - 30)/60);
     var remainingSeconds = seconds % 60;
     if (remainingSeconds < 10) {
