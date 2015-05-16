@@ -1,7 +1,9 @@
 $( ".list" ).css( "display", "none" );
 
+
 var $fila = $('.list').first(),
     $tareas = $('#tarea');
+    // $pendiente = $('.list');
 
 
 
@@ -21,23 +23,41 @@ function agregarTarea(){
 
           $clone.hide();
           $(".section").prepend($clone);
+
           $clone.fadeIn();
 
 
 
+
+      // document.getElementById('pending').innerHTML = $('.section');
+
+
+
     return false;
+
+
 }
+// function emptyClear() {
+  
+//     $(".item:empty").css( "display", "none" );
+
+// }
 
 
 $('#formulario').on('submit', agregarTarea);
 
 function randomScript() {
 
- 	var random = Math.floor(Math.random() * $('.list:nth-child(n+2)').length); $('.list').hide().eq(random).show(); 
+ 	var random = Math.floor(Math.random() * $('.list:nth-child(n+2)').length); 
+  $('.list').hide().eq(random).show(); 
+
+  // var q = $("li:empty").hiden;
+
+
+
 }
 
 
-// pesoEnMarte = (peso / 9.81) * 3.711;
 	
 	function secondPassed() {
     // var second = (seconds * 60);
@@ -49,14 +69,18 @@ function randomScript() {
     document.getElementById('countdown').innerHTML = minutes + ":" + remainingSeconds;
     if (seconds == 0) {
         clearInterval(countdownTimer);
-        document.getElementById('countdown').innerHTML = "Buzz Buzz";
+        document.getElementById("alarm").play();
+        document.getElementById('countdown').innerHTML = "Fin del tiempo";
+
     } else {
         seconds--;
     }
-}
+
+
+};
  
 function runTimer() {
-	var countdownTimer = setInterval('secondPassed()', 1000);
+	countdownTimer = setInterval('secondPassed()', 1000);
 	return false ;
 }
 
