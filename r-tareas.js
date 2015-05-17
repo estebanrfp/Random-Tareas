@@ -56,9 +56,11 @@ function randomScript() {
 
  	random = Math.floor(Math.random() * $('.list:nth-child(n+2)').length); $('.list').hide().eq(random).show(); 
  
-seconds = (parseInt($('.list #times-print').eq(random).text()))*60;
+  seconds = (parseInt($('.list #times-print').eq(random).text()))*60;
 
+var lista = $('.item').text();
 
+pending.innerText = lista;
   // var q = $("li:empty").hiden;
 
 
@@ -68,11 +70,10 @@ seconds = (parseInt($('.list #times-print').eq(random).text()))*60;
 
 
 
-
 	
 	function secondPassed() {
    
-
+     tareaComp = $('.list .item').hide().eq(random).show()
  
     // var second = (seconds * 60);
     var minutes = Math.round((seconds - 30)/60);
@@ -85,6 +86,8 @@ seconds = (parseInt($('.list #times-print').eq(random).text()))*60;
         clearInterval(countdownTimer);
         document.getElementById("alarm").play();
         document.getElementById('countdown').innerHTML = "Fin del tiempo";
+        tareaComp.css( "display", "none" );
+
 
     } else {
         seconds--;
