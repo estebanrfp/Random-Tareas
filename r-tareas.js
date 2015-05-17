@@ -7,26 +7,32 @@ var $fila = $('.list').first(),
 
 
 
+
 function agregarTarea(){
     $tiempos = $( "#times option:selected" ).text();
 
      var tareas  = $tareas.val();
-         seconds = parseInt($tiempos) * 60;
-      var $clone  = $fila.clone();
+         second = parseInt($tiempos);
+     var $clone  = $fila.clone();
 
-         $clone.find('.ulu .item')
+         $clone.find('.ulu .item .tarea-print')
           .text(tareas);
 
-          $clone.find('.ulus .times-print')
-          .text(seconds/60);
+          $clone.find('.ulu .item #times-print')
+          .text(second);
         
 
           $clone.hide();
           $(".section").prepend($clone);
+         
+
 
           $clone.fadeIn();
 
-
+// function ffff() {
+//   $( ".section" ).clone().prependTo( "p" );
+// }
+//   ffff();
 
 
       // document.getElementById('pending').innerHTML = $('.section');
@@ -48,18 +54,26 @@ $('#formulario').on('submit', agregarTarea);
 
 function randomScript() {
 
- 	var random = Math.floor(Math.random() * $('.list:nth-child(n+2)').length); 
-  $('.list').hide().eq(random).show(); 
+ 	random = Math.floor(Math.random() * $('.list:nth-child(n+2)').length); $('.list').hide().eq(random).show(); 
+ 
+seconds = (parseInt($('.list #times-print').eq(random).text()))*60;
+
 
   // var q = $("li:empty").hiden;
 
 
 
 }
+    
+
+
 
 
 	
 	function secondPassed() {
+   
+
+ 
     // var second = (seconds * 60);
     var minutes = Math.round((seconds - 30)/60);
     var remainingSeconds = seconds % 60;
@@ -85,12 +99,14 @@ function runTimer() {
 }
 
      
-    $('.start-random').click(function() {
-        randomScript();
-        runTimer();
+//     $('.start-random').click(function() {
+//         randomScript();
+//         runTimer();
     
-});
+// });
 
+ $('.start-random').click(randomScript);
+ $('.start-timer').click(runTimer);
 
  
 
