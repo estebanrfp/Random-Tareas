@@ -58,23 +58,26 @@ function randomScript() {
  
   seconds = (parseInt($('.list #times-print').eq(random).text()))*60;
 
-var lista = $('.item').text();
 
-pending.innerText = lista;
+  nnn = $('.list .item ').eq(random).text();
+  pen.innerText = nnn;
+
+
+
   // var q = $("li:empty").hiden;
+ // elije = $('.list .item ').eq(random).hide();
 
-
+// elim = $('.list .item ').eq(random);
 
 }
     
-
-
+// var lista = $('.item').text();
+//   pending.innerText = lista;  
 
 	
 	function secondPassed() {
    
-     tareaComp = $('.list .item').hide().eq(random).show()
- 
+    
     // var second = (seconds * 60);
     var minutes = Math.round((seconds - 30)/60);
     var remainingSeconds = seconds % 60;
@@ -86,7 +89,11 @@ pending.innerText = lista;
         clearInterval(countdownTimer);
         document.getElementById("alarm").play();
         document.getElementById('countdown').innerHTML = "Fin del tiempo";
-        tareaComp.css( "display", "none" );
+       // $('.list .item ').eq(random).hide();
+       $('.item').text();
+       pending.innerText = $('.item').text()
+
+      
 
 
     } else {
@@ -97,9 +104,17 @@ pending.innerText = lista;
 };
  
 function runTimer() {
+  $('.list .item ').eq(random).remove();
+
 	countdownTimer = setInterval('secondPassed()', 1000);
 	return false ;
 }
+// function clonTimer() {
+//   $('.list .item ').eq(random).show();
+
+// }
+
+ 
 
      
 //     $('.start-random').click(function() {
